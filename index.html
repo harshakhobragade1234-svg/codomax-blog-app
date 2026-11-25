@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codomax Blog App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">BlogApp</div>
+    <nav class="nav-links">
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('create')">Create Blog</button>
+      <button onclick="showSection('dashboard')">Dashboard</button>
+      <button onclick="showSection('login')">Login</button>
+      <button onclick="showSection('register')">Register</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="section active">
+      <h1>Latest Blogs</h1>
+      <div id="blogList" class="blog-grid"></div>
+    </section>
+
+    <section id="create" class="section">
+      <h2>Create a New Blog</h2>
+      <form id="blogForm" class="card">
+        <label>Blog Title</label>
+        <input type="text" id="blogTitle" placeholder="Enter blog title" required />
+
+        <label>Category</label>
+        <input type="text" id="blogCategory" placeholder="e.g. Tech, Web Dev" required />
+
+        <label>Content</label>
+        <textarea id="blogContent" rows="5" placeholder="Write your blog here..." required></textarea>
+
+        <button type="submit" class="btn">Publish Blog</button>
+      </form>
+    </section>
+
+    <section id="dashboard" class="section">
+      <h2>My Dashboard</h2>
+      <div class="card">
+        <p><strong>Status:</strong> <span id="userStatus">Guest</span></p>
+        <p><strong>Total Published Blogs:</strong> <span id="blogCount">0</span></p>
+      </div>
+    </section>
+
+    <section id="login" class="section">
+      <h2>Login</h2>
+      <form id="loginForm" class="card">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter email" required />
+
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password" required />
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </section>
+
+    <section id="register" class="section">
+      <h2>Register</h2>
+      <form id="registerForm" class="card">
+        <label>Full Name</label>
+        <input type="text" id="regName" placeholder="Enter full name" required />
+
+        <label>Email</label>
+        <input type="email" id="regEmail" placeholder="Enter email" required />
+
+        <label>Password</label>
+        <input type="password" id="regPassword" placeholder="Create password" required />
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
