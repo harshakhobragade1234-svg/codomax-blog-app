@@ -1,11 +1,18 @@
-const express = require("express");
+const express = require("express") 
 const cors = require("cors");
+require("dotenv").config();
+const mongoose = require("mongoose");
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB error:", err));
+
 
 const users = [];
 const blogs = [];
